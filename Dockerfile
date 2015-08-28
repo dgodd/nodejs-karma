@@ -16,8 +16,19 @@ ADD entrypoint.sh /entrypoint.sh
 ENV DISPLAY :99.0
 ENV CHROME_BIN /usr/bin/google-chrome
 
-RUN npm install -g karma karma-jasmine karma-chrome-launcher karma-cli jasmine-core
-RUN npm install -g karma-jquery karma-jasmine-jquery
-RUN npm install -g karma-html-reporter
+RUN npm install -g \
+    jasmine-core \
+    karma \
+    karma-chrome-launcher \
+    karma-chrome-launcher \
+    karma-cli \
+    karma-coverage \
+    karma-html-reporter \
+    karma-jasmine \
+    karma-jasmine \
+    karma-jasmine-jquery \
+    karma-jquery \
+    karma-phantomjs-launcher \
+    karma-teamcity-reporter
 
 ENTRYPOINT ["/entrypoint.sh"]
