@@ -17,5 +17,6 @@ ENV DISPLAY :99.0
 ENV CHROME_BIN /usr/bin/google-chrome
 
 RUN npm install -g karma karma-jasmine karma-chrome-launcher karma-cli jasmine-core
+RUN npm install -g karma-jquery karma-jasmine-jquery
 
 ENTRYPOINT ["/entrypoint.sh"]
