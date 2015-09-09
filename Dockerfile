@@ -2,6 +2,8 @@ FROM ubuntu:trusty
 
 MAINTAINER Dave Goddard <dave@goddard.id.au>
 
+ENV TERM dummy
+
 RUN apt-get update; \
     apt-get install -y git curl; \
     curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -; \
@@ -21,4 +23,5 @@ ADD package.json /nodemodules/package.json
 WORKDIR /nodemodules
 RUN npm install
 
+WORKDIR /
 ENTRYPOINT ["/entrypoint.sh"]
