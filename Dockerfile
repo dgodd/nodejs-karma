@@ -16,8 +16,9 @@ ADD entrypoint.sh /entrypoint.sh
 ENV DISPLAY :99.0
 ENV CHROME_BIN /usr/bin/google-chrome
 
-WORKDIR /
-ADD package.json /package.json
-RUN npm install -g
+RUN mkdir /nodemodules
+ADD package.json /nodemodules/package.json
+WORKDIR /nodemodules
+RUN npm install
 
 ENTRYPOINT ["/entrypoint.sh"]
